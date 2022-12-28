@@ -1,4 +1,5 @@
 from django.contrib.auth.base_user import BaseUserManager
+from accountbook.models import AccountBook
 from django.utils.translation import gettext_lazy as _
 
 
@@ -10,6 +11,7 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
+        AccountBook.objects.create(user=user, name=f"{user.username}'s AccountBook")
         return user
 
     def create_superuser(self, email, password, **extra_fields):
