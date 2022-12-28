@@ -264,3 +264,4 @@ poetry.toml
 요구사항*
 secrets.json
 .vscode
+*migrations*
