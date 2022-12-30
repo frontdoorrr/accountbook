@@ -38,6 +38,12 @@ def get_secret(setting, secrets=secrets):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret("SECRET_KEY")
+DATABASE_NAME = get_secret("DATABASE_NAME")
+DATABASE_USER = get_secret("DATABASE_USER")
+DATABASE_PSWD = get_secret("DATABASE_PSWD")
+DATABASE_HOST = get_secret("DATABASE_HOST")
+DATABASE_PORT = get_secret("DATABASE_PORT")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -107,8 +113,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": DATABASE_NAME,
+        "USER": DATABASE_USER,
+        "PASSWORD": DATABASE_PSWD,
+        "HOST": DATABASE_HOST,
+        "PORT": DATABASE_PORT,
     }
 }
 
