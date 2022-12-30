@@ -1,11 +1,8 @@
 # AccountBook
-Simple Account Book using Django
+Make Simple Account Book using Django for Practice
 
 ## Description
     수입, 지출 내역을 정리할 수 있는 가계부이다.
-
-## Environment
- mysql
 
 ## Prerequisite
 
